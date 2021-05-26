@@ -14,6 +14,16 @@
   overflow: hidden;
 }
 
+.project__container {
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0.5em solid rgba(157, 219, 227);
+  overflow: hidden;
+}
+
 .header {
   width: 100%;
   padding-top: 1.8em;
@@ -101,7 +111,7 @@ button {
   }
 
   .work,
-  .about {
+  .aboutbut {
     font-family: SinkinSans-700Bold;
     font-size: 0.625rem;
     color: rgba(157, 219, 227, 0.9);
@@ -125,7 +135,10 @@ button {
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 600px) {
+  .container {
+    border: 0.75em solid rgba(157, 219, 227);
+  }
   .header {
     width: 100%;
     padding-left: 2em;
@@ -196,7 +209,7 @@ button {
 
   .wo,
   .ab {
-    margin-top: 3.75em;
+    margin-top: 3em;
   }
 
   .ab {

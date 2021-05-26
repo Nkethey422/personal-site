@@ -2,17 +2,33 @@ import React from "react";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import EmailIcon from "@material-ui/icons/Email";
-import "../App.css";
+import { NavLink } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ clickHandler, active }) {
   return (
     <div className="container__navbar">
       <div className="navbar__buttons">
         <div className="wo">
-          <button>WORK</button>
+          <button className="work">
+            <NavLink
+              to="/"
+              exact
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              WORK
+            </NavLink>
+          </button>
         </div>
         <div className="ab">
-          <button>ABOUT</button>
+          <button className="aboutbut">
+            <NavLink
+              to="/about"
+              exact
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              ABOUT
+            </NavLink>
+          </button>
         </div>
       </div>
       <div className="navbar__icons">
