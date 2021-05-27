@@ -10,15 +10,13 @@ const h2__titles = [
 function Titles() {
   return (
     <div className="container__titles">
-      <>
-        {h2__titles.map(({ to, key, name }) => (
-          <h2>
-            <NavLink to={to} exact className={key}>
-              <span>{name}</span>
-            </NavLink>
-          </h2>
-        ))}
-      </>
+      {h2__titles.map(({ to, key, name }) => (
+        <h2>
+          <NavLink to={to} exact className={key}>
+            <span>{name}</span>
+          </NavLink>
+        </h2>
+      ))}
     </div>
   );
 }
