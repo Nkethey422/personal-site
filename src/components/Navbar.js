@@ -4,28 +4,20 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import EmailIcon from "@material-ui/icons/Email";
 import { NavLink } from "react-router-dom";
 
-function Navbar({ clickHandler, active }) {
+function Navbar() {
   return (
     <div className="container__navbar">
       <div className="navbar__buttons">
         <div className="wo">
           <button className="work">
-            <NavLink
-              to="/"
-              exact
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
+            <NavLink className="nav__link" to="/" exact>
               WORK
             </NavLink>
           </button>
         </div>
         <div className="ab">
-          <button className="aboutbut">
-            <NavLink
-              to="/about"
-              exact
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
+          <button className="about">
+            <NavLink className="nav__link" to="/about" exact>
               ABOUT
             </NavLink>
           </button>
@@ -34,7 +26,6 @@ function Navbar({ clickHandler, active }) {
       <div className="navbar__icons">
         <div className="handler">
           <LinkedInIcon
-            style={{ color: "lightblue" }}
             className="icon"
             onClick={() =>
               window.open("https://www.linkedin.com/in/Neeraj-Kethey")
@@ -43,13 +34,12 @@ function Navbar({ clickHandler, active }) {
         </div>
         <div className="handler">
           <GitHubIcon
-            style={{ color: "lightblue" }}
             className="icon"
             onClick={() => window.open("https://www.github.com/Nkethey422")}
           />
         </div>
         <div className="handler">
-          <EmailIcon style={{ color: "lightblue" }} className="icon" />
+          <EmailIcon className="icon" />
         </div>
       </div>
     </div>

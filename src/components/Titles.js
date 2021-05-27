@@ -1,37 +1,23 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-function Titles({ clickHandler, active }) {
+const h2__titles = [
+  { to: "/Netflix", key: "nav__link", name: "NETFLIX CLONE" },
+  { to: "/Crypto-Tracker", key: "nav__link", name: "CRYPTO TRACKER" },
+  { to: "/Image-Maker", key: "nav__link", name: "IMAGE MAKER" },
+];
+
+function Titles() {
   return (
     <div className="container__titles">
       <>
-        <h2>
-          <NavLink
-            to="/Netflix"
-            exact
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            <span>NETFLIX CLONE</span>
-          </NavLink>
-        </h2>
-        <h2>
-          <NavLink
-            to="/Crypto-Tracker"
-            exact
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            <span>CRYPTO TRACKER</span>
-          </NavLink>
-        </h2>
-        <h2>
-          <NavLink
-            to="/Image-Maker"
-            exact
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            <span>IMAGE MAKER</span>
-          </NavLink>
-        </h2>
+        {h2__titles.map(({ to, key, name }) => (
+          <h2>
+            <NavLink to={to} exact className={key}>
+              <span>{name}</span>
+            </NavLink>
+          </h2>
+        ))}
       </>
     </div>
   );

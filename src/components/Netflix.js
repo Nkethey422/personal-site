@@ -6,20 +6,8 @@ import Navbar from "./Navbar.js";
 
 function Netflix() {
   return (
-    <div className="container">
-      <video
-        autoPlay
-        loop
-        muted
-        style={{
-          position: "absolute",
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          opactiy: "0.2",
-          zIndex: "-100",
-        }}
-      >
+    <>
+      <video autoPlay loop muted>
         <source src={Net} type="video/mp4" />
       </video>
       <Header />
@@ -29,7 +17,7 @@ function Netflix() {
         </div>
         <Navbar />
       </div>
-    </div>
+    </>
   );
 }
 

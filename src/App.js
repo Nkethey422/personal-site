@@ -5,25 +5,29 @@ import Netflix from "./components/Netflix";
 import Crypto from "./components/Crypto";
 import Github from "./components/Github";
 import { Route } from "react-router-dom";
+import { CSSTransition } from "react-transition-group";
+import { gsap } from "gsap";
+
+const routes = [
+  { path: "/", name: "Home", Component: Home },
+  { path: "/about", name: "About", Component: About },
+  { path: "/Netflix", name: "Netflix", Component: Netflix },
+  { path: "/Crypto-Tracker", name: "Crypto-Tracker", Component: Crypto },
+  { path: "/Image-Maker", name: "Github", Component: Github },
+];
 
 function App() {
   return (
     <div className="App">
-      <Route path="/" exact component="Home">
-        <Home />
-      </Route>
-      <Route path="/about" exact component="About">
-        <About />
-      </Route>
-      <Route path="/Netflix" exact component="Netflix">
-        <Netflix />
-      </Route>
-      <Route path="/Crypto-Tracker" exact component="Crypto">
-        <Crypto />
-      </Route>
-      <Route path="/Image-Maker" exact component="Github">
-        <Github />
-      </Route>
+      <div className="container">
+        {routes.map(({ path, Component }) => (
+          <Route key="name" path={path} exact>
+            <div className="page">
+              <Component />
+            </div>
+          </Route>
+        ))}
+      </div>
     </div>
   );
 }

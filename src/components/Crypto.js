@@ -4,7 +4,7 @@ import Navbar from "./Navbar.js";
 
 function Crypto() {
   return (
-    <div className="container">
+    <>
       <Header />
       <div className="content__container">
         <div className="container__titles">
@@ -12,7 +12,7 @@ function Crypto() {
         </div>
         <Navbar />
       </div>
-    </div>
+    </>
   );
 }
 
