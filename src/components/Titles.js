@@ -1,22 +1,24 @@
-// import React from "react";
-// import { Link } from "react-router-dom";
+import React from "react";
+import { NavLink } from "react-router-dom";
 
-// function Titles() {
-//   return (
-//     <div className="content__container">
-//       <div className="container__titles">
-//           <h2>
-//             <span>NETFLIX CLONE</span>
-//           </h2>
-//           <h2>
-//             <span>CRYPTO TRACKER</span>
-//           </h2>
-//           <h2>
-//             <span>IMAGE MAKER</span>
-//           </h2>
-//       </div>
-//     </div>
-//   );
-// }
+const h2__titles = [
+  { to: "/Netflix", key: "nav__link", name: "NETFLIX CLONE" },
+  { to: "/Crypto-Tracker", key: "nav__link", name: "CRYPTO TRACKER" },
+  { to: "/Image-Maker", key: "nav__link", name: "IMAGE MAKER" },
+];
 
-// export default Titles;
+function Titles() {
+  return (
+    <div className="container__titles">
+      {h2__titles.map(({ to, key, name }) => (
+        <h2>
+          <NavLink to={to} exact className={key}>
+            <span>{name}</span>
+          </NavLink>
+        </h2>
+      ))}
+    </div>
+  );
+}
+
+export default Titles;

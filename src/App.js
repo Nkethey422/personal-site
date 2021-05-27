@@ -1,43 +1,32 @@
 import "./App.css";
-import Tv from "./video/tv.mp4";
-import Navbar from "./components/Navbar.js";
-import Header from "./components/Header.js";
+import Home from "./pages/Home.js";
+import About from "./pages/About.js";
+import Netflix from "./components/Netflix";
+import Crypto from "./components/Crypto";
+import Github from "./components/Github";
+import { Route } from "react-router-dom";
+import { CSSTransition } from "react-transition-group";
+import { gsap } from "gsap";
+
+const routes = [
+  { path: "/", name: "Home", Component: Home },
+  { path: "/about", name: "About", Component: About },
+  { path: "/Netflix", name: "Netflix", Component: Netflix },
+  { path: "/Crypto-Tracker", name: "Crypto-Tracker", Component: Crypto },
+  { path: "/Image-Maker", name: "Github", Component: Github },
+];
 
 function App() {
   return (
     <div className="App">
-      <video
-        autoPlay
-        loop
-        muted
-        style={{
-          position: "absolute",
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          opactiy: "0.2",
-          zIndex: "-100",
-          filter: "brightness(70%)",
-        }}
-      >
-        <source src={Tv} type="video/mp4" />
-      </video>
       <div className="container">
-        <Header />
-        <div className="content__container">
-          <div className="container__titles">
-            <h2>
-              <span>NETFLIX CLONE</span>
-            </h2>
-            <h2>
-              <span>CRYPTO TRACKER</span>
-            </h2>
-            <h2>
-              <span>IMAGE MAKER</span>
-            </h2>
-          </div>
-          <Navbar />
-        </div>
+        {routes.map(({ path, Component }) => (
+          <Route key="name" path={path} exact>
+            <div className="page">
+              <Component />
+            </div>
+          </Route>
+        ))}
       </div>
     </div>
   );

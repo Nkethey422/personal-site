@@ -1,0 +1,13 @@
+.netflix__project {
+  font-family: Ailerons;
+  color: rgba(157, 219, 227);
+  font-weight: bolder;
+  cursor: pointer;
+  background-color: transparent;
+  -webkit-text-stroke-width: 0.6px;
+  -webkit-text-fill-color: transparent;
+}
+
+.video__netflix {
+  opacity: 1;
+}
